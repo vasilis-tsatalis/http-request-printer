@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-const { create } = require("../src/endpoints/create");
-const { read } = require("../src/endpoints/read");
-const { deleted } = require("../src/endpoints/delete");
-const { update } = require("../src/endpoints/update");
+const { to_create } = require("../src/endpoints/create");
+const { to_read } = require("../src/endpoints/read");
+const { to_delete } = require("../src/endpoints/delete");
+const { to_update } = require("../src/endpoints/update");
 
-router.route("/").post(create);
-router.route("/").get(read);
-router.route("/{:id}").delete(deleted);
-router.route("/{:id}").update(update);
+router.route("/").post(to_create);
+router.route("/").get(to_read);
+router.route("/").delete(to_delete);
+router.route("/").put(to_update);
 
 module.exports = router;

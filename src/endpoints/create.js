@@ -1,7 +1,11 @@
 require('dotenv/config');
+const qlogger = require('../functions/qlogger');
 
-exports.create = async (req, res, next) => {
+exports.to_create = async (req, res, next) => {
     try{
+
+        await qlogger(req);
+
         //res.render("test1", { message: 'test message' });
         res.sendStatus(200)
     }catch(err){
